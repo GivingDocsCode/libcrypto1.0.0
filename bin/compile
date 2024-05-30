@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+
+# Run post_compile script if it exists
+if [ -f $BUILD_DIR/post_compile ]; then
+  echo "Running post_compile script..."
+  chmod +x $BUILD_DIR/post_compile
+  $BUILD_DIR/post_compile
+else
+  echo "No post_compile script found."
+fi
